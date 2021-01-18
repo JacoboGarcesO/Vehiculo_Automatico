@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículo automático</title>
+    <link rel="shortcut icon" href="./images/icons8-steering-lock-warning-64.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="container principal">
+        <div class="container text-center" id="Alerts"></div>
+        <img src="./images/Fondo_Tablero.jpg" alt="">
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="text-center">
+                <button type="button" id="btn_On" class="btn btn-success "><i style="font-size: x-large;" class="fas fa-power-off"></i></button>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div style="padding-left: 120px;" class="col">
+                    <button id="btn_Dr_Iz" type="button" class="btn btn-success "><i style="font-size: xx-large;" class="fas fa-arrow-left"></i></button>
+                </div>
+                <div style="padding-left: 30px;" class="col-8">
+                    <button id="btn_Dr_De" type="button" class="btn btn-success "><i style="font-size: xx-large;" class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <br>
+            <br>
+            
+            <div style="padding-left: 130px; " class="text-center">
+                <button type="button" id="btn_Parqueo" class="btn btn-light"><i style="font-size: xx-large;" class="text-danger fas fa-caret-square-up"></i></button>
+            </div>
+            <br>
+            <br>
+            <div style="padding-left: 150px;" class="text-center">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button id="btn_Reversa" type="button" class="btn btn-success">R</button>
+                    <button id="btn_1ra" type="button" class="btn btn-success">1</button>
+                    <button id="btn_3ra" type="button" class="btn btn-success">3</button>
+                    <button id="btn_5ta" type="button" class="btn btn-success">5</button>
+                </div>
+                  <br>
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                      <button id="btn_Neutro" type="button" class="btn btn-success">N</button>
+                    <button id="btn_2da" type="button" class="btn btn-success">2</button>
+                    <button id="btn_4ta" type="button" class="btn btn-success">4</button>
+                    <button id="btn_6ta" type="button" class="btn btn-success">6</button>
+                  </div>
+            </div>
+            <br>
+            <div style="padding-left: 200px;">
+                <button id="btn_Cl" style="margin:0 30px;" type="button" class="btn btn-success">CL</button>
+                <button id="btn_Fr" style="margin:0 30px;" type="button" class="btn btn-success">FR</button>
+                <button id="btn_Ac" style="margin:0 30px;" type="button" class="btn btn-success">AC</button>
+            </div>
+            
+            <div style="padding-left: 205px;" class="text-center">
+                <button id="btn_Freno_Mano" style="margin:0 30px; margin-top: 30px;" type="button" class="btn btn-success">FRM</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/91fcd44a4a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
