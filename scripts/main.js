@@ -16,7 +16,6 @@ var btn_4ta=document.getElementById('btn_4ta');
 var btn_5ta=document.getElementById('btn_5ta');
 var btn_6ta=document.getElementById('btn_6ta');
 var tecla=0;
-var parqueo=false;
 var encendido=false;
 var giroIz=false;
 var giroDe=false
@@ -62,49 +61,59 @@ class Acciones extends InteraccionesCompletas{
     };
     estacionarias(){
         this.btn_Parqueo.addEventListener('click',()=>{
-            if(parqueo==false){
-                document.body.classList.add("bg-dark");
-                parqueo=true;
-                document.getElementById('btn_Freno_Mano').classList.add('bg-dark');
-                document.getElementById('btn_Reversa').classList.add('bg-dark');
-                document.getElementById('btn_Neutro').classList.add('bg-dark');
-                document.getElementById('btn_Fr').classList.add('bg-dark');
-                document.getElementById('btn_On').classList.add('bg-dark');
-                document.getElementById('btn_Ac').classList.add('bg-dark');
-                document.getElementById('btn_Cl').classList.add('bg-dark');
-                document.getElementById('btn_Dr_Iz').classList.add('bg-dark');
-                document.getElementById('btn_Dr_De').classList.add('bg-dark');
-                document.getElementById('btn_Parqueo').classList.add('bg-warning');
-                document.getElementById('btn_1ra').classList.add('bg-dark');
-                document.getElementById('btn_2da').classList.add('bg-dark');
-                document.getElementById('btn_3ra').classList.add('bg-dark');
-                document.getElementById('btn_4ta').classList.add('bg-dark');
-                document.getElementById('btn_5ta').classList.add('bg-dark');
-                document.getElementById('btn_6ta').classList.add('bg-dark');
-                document.getElementById('Alerts').innerHTML=`<div class="bg-danger alert alert-warning alert-dismissible fade show" role="alert">
-                <img width="150px" height="150px" src="./images/icons8-stop-sign-100.png" alt="">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
-            }else{
-                parqueo=false;
-                document.body.classList.remove("bg-dark");
-                document.getElementById('Alerts').innerHTML='';
-                document.getElementById('btn_Freno_Mano').classList.remove('bg-dark');
-                document.getElementById('btn_Reversa').classList.remove('bg-dark');
-                document.getElementById('btn_Neutro').classList.remove('bg-dark');
-                document.getElementById('btn_Fr').classList.remove('bg-dark');
-                document.getElementById('btn_On').classList.remove('bg-dark');
-                document.getElementById('btn_Ac').classList.remove('bg-dark');
-                document.getElementById('btn_Cl').classList.remove('bg-dark');
-                document.getElementById('btn_Dr_Iz').classList.remove('bg-dark');
-                document.getElementById('btn_Dr_De').classList.remove('bg-dark');
-                document.getElementById('btn_Parqueo').classList.remove('bg-warning');
-                document.getElementById('btn_1ra').classList.remove('bg-dark');
-                document.getElementById('btn_2da').classList.remove('bg-dark');
-                document.getElementById('btn_3ra').classList.remove('bg-dark');
-                document.getElementById('btn_4ta').classList.remove('bg-dark');
-                document.getElementById('btn_5ta').classList.remove('bg-dark');
-                document.getElementById('btn_6ta').classList.remove('bg-dark');
-            }
+                if(marcha){
+                    document.getElementById("cerrar").click();
+                    document.body.classList.add("bg-dark");
+                    document.getElementById('btn_Freno_Mano').classList.add('bg-dark');
+                    document.getElementById('btn_Reversa').classList.add('bg-dark');
+                    document.getElementById('btn_Neutro').classList.add('bg-dark');
+                    document.getElementById('btn_Fr').classList.add('bg-dark');
+                    document.getElementById('btn_On').classList.add('bg-dark');
+                    document.getElementById('btn_Ac').classList.add('bg-dark');
+                    document.getElementById('btn_Cl').classList.add('bg-dark');
+                    document.getElementById('btn_Dr_Iz').classList.add('bg-dark');
+                    document.getElementById('btn_Dr_De').classList.add('bg-dark');
+                    document.getElementById('btn_Parqueo').classList.add('bg-warning');
+                    document.getElementById('btn_1ra').classList.add('bg-dark');
+                    document.getElementById('btn_2da').classList.add('bg-dark');
+                    document.getElementById('btn_3ra').classList.add('bg-dark');
+                    document.getElementById('btn_4ta').classList.add('bg-dark');
+                    document.getElementById('btn_5ta').classList.add('bg-dark');
+                    document.getElementById('btn_6ta').classList.add('bg-dark');
+                    document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong class='text-body'>¡Estacionarias encendidas!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>`;
+                    setTimeout(()=>{
+                        document.getElementById("cerrar").click();
+                        document.body.classList.remove("bg-dark");
+                        document.getElementById('Alerts').innerHTML='';
+                        document.getElementById('btn_Freno_Mano').classList.remove('bg-dark');
+                        document.getElementById('btn_Reversa').classList.remove('bg-dark');
+                        document.getElementById('btn_Neutro').classList.remove('bg-dark');
+                        document.getElementById('btn_Fr').classList.remove('bg-dark');
+                        document.getElementById('btn_On').classList.remove('bg-dark');
+                        document.getElementById('btn_Ac').classList.remove('bg-dark');
+                        document.getElementById('btn_Cl').classList.remove('bg-dark');
+                        document.getElementById('btn_Dr_Iz').classList.remove('bg-dark');
+                        document.getElementById('btn_Dr_De').classList.remove('bg-dark');
+                        document.getElementById('btn_Parqueo').classList.remove('bg-warning');
+                        document.getElementById('btn_1ra').classList.remove('bg-dark');
+                        document.getElementById('btn_2da').classList.remove('bg-dark');
+                        document.getElementById('btn_3ra').classList.remove('bg-dark');
+                        document.getElementById('btn_4ta').classList.remove('bg-dark');
+                        document.getElementById('btn_5ta').classList.remove('bg-dark');
+                        document.getElementById('btn_6ta').classList.remove('bg-dark');
+                        document.getElementById('Alerts').innerHTML=`<div class="bg-danger alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong class='text-body'>¡Estacionarias apagadas!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>`;
+                    },10000);
+                }else{
+                    setTimeout(()=>{
+                        document.getElementById("cerrar").click();
+                    },500);
+                }
         });
     }
     pedales(){
@@ -115,22 +124,26 @@ class Acciones extends InteraccionesCompletas{
                     if(contadorFreno==0){
                         contadorFreno=5;
                         clearInterval(intervalFreno);
+                        document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong class='text-body'>¡Carro frenado!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>`;
                     }else{
                         contadorFreno-=1;
                         document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                         <strong class='text-body'>¡Frenando en...${contadorFreno}!</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>`;
+                        document.getElementById('btn_Fr').classList.add('bg-success');
                     }
-
                 }, 1000);
-                
             }else{
                 freno_Pie=false;
                 document.getElementById('Alerts').innerHTML=`<div class="bg-danger alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>Soltó el freno</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+              </div>`;
+              document.getElementById('btn_Fr').classList.remove('bg-success');
             }
         });
         this.btn_Acelerar.addEventListener('click', ()=>{
@@ -139,13 +152,15 @@ class Acciones extends InteraccionesCompletas{
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡Acelerando...!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Ac').classList.add('bg-success');
             }else{
                 acelerar=false
                 document.getElementById('Alerts').innerHTML=`<div class="bg-danger alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>Soltó el acelerador</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Ac').classList.remove('bg-success');
             }
         });
         this.btn_Clutch.addEventListener('click', ()=>{
@@ -154,14 +169,16 @@ class Acciones extends InteraccionesCompletas{
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡Clutch presionado!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Cl').classList.add('bg-success');
             }else{
                 clutch=false
                 console.log('Cluth sin presionar');
                 document.getElementById('Alerts').innerHTML=`<div class="bg-danger alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>Soltó el clutch</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Cl').classList.remove('bg-success');
             }
         });
         this.btn_Freno_Mano.addEventListener('click', ()=>{
@@ -170,13 +187,16 @@ class Acciones extends InteraccionesCompletas{
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡Freno de mano puesto!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Freno_Mano').classList.add('bg-success');
             }else{
                 freno_Mano=false;
                 document.getElementById('Alerts').innerHTML=`<div class="bg-danger alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>Freno de mano abajo, tenga cuidado</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Freno_Mano').classList.remove('bg-success');
+
             }
         });
     };
@@ -194,7 +214,16 @@ class Acciones extends InteraccionesCompletas{
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡En reversa!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Reversa').classList.add('bg-success');
+                document.getElementById('btn_1ra').classList.remove('bg-success');
+                document.getElementById('btn_2da').classList.remove('bg-success');
+                document.getElementById('btn_3ra').classList.remove('bg-success');
+                document.getElementById('btn_4ta').classList.remove('bg-success');
+                document.getElementById('btn_5ta').classList.remove('bg-success');
+                document.getElementById('btn_6ta').classList.remove('bg-success');
+                document.getElementById('btn_Neutro').classList.remove('bg-success');
+
             }
         });
         this.btn_1ra.addEventListener('click', ()=>{
@@ -212,6 +241,14 @@ class Acciones extends InteraccionesCompletas{
                 <strong class='text-body'>¡En primera!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`;
+                document.getElementById('btn_Reversa').classList.remove('bg-success');
+                document.getElementById('btn_1ra').classList.add('bg-success');
+                document.getElementById('btn_2da').classList.remove('bg-success');
+                document.getElementById('btn_3ra').classList.remove('bg-success');
+                document.getElementById('btn_4ta').classList.remove('bg-success');
+                document.getElementById('btn_5ta').classList.remove('bg-success');
+                document.getElementById('btn_6ta').classList.remove('bg-success');
+                document.getElementById('btn_Neutro').classList.remove('bg-success');
                 if(marcha&&clutch){
                     interval=setInterval("actualizar()",1000);
                     contadorSeg+=getRandomInt(700, 800);
@@ -234,6 +271,14 @@ class Acciones extends InteraccionesCompletas{
                 <strong class='text-body'>¡En segunda!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`;
+                document.getElementById('btn_Reversa').classList.remove('bg-success');
+                document.getElementById('btn_1ra').classList.remove('bg-success');
+                document.getElementById('btn_2da').classList.add('bg-success');
+                document.getElementById('btn_3ra').classList.remove('bg-success');
+                document.getElementById('btn_4ta').classList.remove('bg-success');
+                document.getElementById('btn_5ta').classList.remove('bg-success');
+                document.getElementById('btn_6ta').classList.remove('bg-success');
+                document.getElementById('btn_Neutro').classList.remove('bg-success');
                 if(marcha&&clutch){
                     interval=setInterval("actualizar()",1000);
                     contadorSeg+=getRandomInt(500, 600);
@@ -256,6 +301,14 @@ class Acciones extends InteraccionesCompletas{
                 <strong class='text-body'>¡En tercera!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`;
+                document.getElementById('btn_Reversa').classList.remove('bg-success');
+                document.getElementById('btn_1ra').classList.remove('bg-success');
+                document.getElementById('btn_2da').classList.remove('bg-success');
+                document.getElementById('btn_3ra').classList.add('bg-success');
+                document.getElementById('btn_4ta').classList.remove('bg-success');
+                document.getElementById('btn_5ta').classList.remove('bg-success');
+                document.getElementById('btn_6ta').classList.remove('bg-success');
+                document.getElementById('btn_Neutro').classList.remove('bg-success');
                 if(marcha&&clutch){
                     interval=setInterval("actualizar()",1000);
                     contadorSeg+=getRandomInt(250, 350);
@@ -278,6 +331,14 @@ class Acciones extends InteraccionesCompletas{
                 <strong class='text-body'>¡En cuarta!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`;
+                document.getElementById('btn_Reversa').classList.remove('bg-success');
+                document.getElementById('btn_1ra').classList.remove('bg-success');
+                document.getElementById('btn_2da').classList.remove('bg-success');
+                document.getElementById('btn_3ra').classList.remove('bg-success');
+                document.getElementById('btn_4ta').classList.add('bg-success');
+                document.getElementById('btn_5ta').classList.remove('bg-success');
+                document.getElementById('btn_6ta').classList.remove('bg-success');
+                document.getElementById('btn_Neutro').classList.remove('bg-success');
                 if(marcha&&clutch){
                     interval=setInterval("actualizar()",1000);
                     contadorSeg+=getRandomInt(100, 150);
@@ -300,6 +361,14 @@ class Acciones extends InteraccionesCompletas{
                 <strong class='text-body'>¡En quinta!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`;
+                document.getElementById('btn_Reversa').classList.remove('bg-success');
+                document.getElementById('btn_1ra').classList.remove('bg-success');
+                document.getElementById('btn_2da').classList.remove('bg-success');
+                document.getElementById('btn_3ra').classList.remove('bg-success');
+                document.getElementById('btn_4ta').classList.remove('bg-success');
+                document.getElementById('btn_5ta').classList.add('bg-success');
+                document.getElementById('btn_6ta').classList.remove('bg-success');
+                document.getElementById('btn_Neutro').classList.remove('bg-success');
                 if(marcha&&clutch){
                     interval=setInterval("actualizar()",1000);
                     contadorSeg+=getRandomInt(20, 80);
@@ -322,6 +391,14 @@ class Acciones extends InteraccionesCompletas{
                 <strong class='text-body'>¡En sexta!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`;
+                document.getElementById('btn_Reversa').classList.remove('bg-success');
+                document.getElementById('btn_1ra').classList.remove('bg-success');
+                document.getElementById('btn_2da').classList.remove('bg-success');
+                document.getElementById('btn_3ra').classList.remove('bg-success');
+                document.getElementById('btn_4ta').classList.remove('bg-success');
+                document.getElementById('btn_5ta').classList.remove('bg-success');
+                document.getElementById('btn_6ta').classList.add('bg-success');
+                document.getElementById('btn_Neutro').classList.remove('bg-success');
                 if(marcha&&clutch){
                     interval=setInterval("actualizar()",1000);
                     velocidades.push(contadorTotalKM/(contadorSeg/3600));
@@ -342,7 +419,15 @@ class Acciones extends InteraccionesCompletas{
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡En neutro!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_Reversa').classList.remove('bg-success');
+                document.getElementById('btn_1ra').classList.remove('bg-success');
+                document.getElementById('btn_2da').classList.remove('bg-success');
+                document.getElementById('btn_3ra').classList.remove('bg-success');
+                document.getElementById('btn_4ta').classList.remove('bg-success');
+                document.getElementById('btn_5ta').classList.remove('bg-success');
+                document.getElementById('btn_6ta').classList.remove('bg-success');
+                document.getElementById('btn_Neutro').classList.add('bg-success');
             }
         });
     };
@@ -353,9 +438,11 @@ class Acciones extends InteraccionesCompletas{
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡Carro encendido!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>`
+                </div>`;
+                document.getElementById('btn_On').classList.add('bg-success');
             }else{
                 if (contadorTotalKM>=distancia&&acelerar==false&&freno_Mano) {
+                    encendido=false;
                     let sumaVEL=0;
                     for (let index = 0; index < velocidades.length; index++) {
                         sumaVEL+=velocidades[index];
@@ -365,11 +452,12 @@ class Acciones extends InteraccionesCompletas{
                     <h1 class='text-body'>Carro apagado</h1>
                     <strong class='text-body'>
                         El tiempo total que duró el viaje fue: ${Math.round(contadorSeg/60)} minutos <br>
-                        La velocidad máxima que alcanzó durante el viaje fue: ${Math.round(velocidades.pop())} Km/h <br>
+                        La velocidad máxima que alcanzó durante el viaje fue: ${Math.round(Math.max(...velocidades))} Km/h <br>
                         La velocidad promedio fue: ${Math.round(sumaVEL)} Km/h
                     </strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>`;
+                    document.getElementById('btn_On').classList.remove('bg-success');
                 }else{document.getElementById('Alerts').innerHTML=`<div class="bg-danger alert alert-warning alert-dismissible fade show" role="alert">
                     <strong class='text-body'>Asegurese de hacerlo todo bien</strong>
                 </div>`}
@@ -399,12 +487,16 @@ class Acciones extends InteraccionesCompletas{
                 giroIz=true;
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡Direccional izquierda activada!</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+                document.getElementById('btn_Dr_Iz').classList.add('bg-success');
+
             }else{
                 giroIz=false;
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong class='text-body'>Direccional izquierda apagada</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
+                <strong class='text-body'>Direccional izquierda apagada</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+                document.getElementById('btn_Dr_Iz').classList.remove('bg-success');
+
             };
         });
         this.btn_Dr_De.addEventListener('click',()=>{
@@ -412,24 +504,24 @@ class Acciones extends InteraccionesCompletas{
                 giroDe=true;
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>¡Direccional derecha activada!</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+                document.getElementById('btn_Dr_De').classList.add('bg-success');
             }else{
                 giroDe=false;
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong class='text-body'>Direccional derecha apagada</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
+                <strong class='text-body'>Direccional derecha apagada</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+                document.getElementById('btn_Dr_De').classList.remove('bg-success');
             };
         });
         window.addEventListener( "keydown", evento=>{
             tecla = evento.keyCode;
-            if(tecla==76&&giroIz==true&&encendido){
-                console.log('marcha '+marcha);
+            if(tecla==76&&giroIz==true&&encendido&&marcha){
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>Giro a la izquierda realizado, recuerde apagar la direccional</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
             }
-            else if(tecla==82&&giroDe==true&&encendido){
-                console.log('marcha '+marcha);
+            else if(tecla==82&&giroDe==true&&encendido&&marcha){
                 document.getElementById('Alerts').innerHTML=`<div class="bg-success alert alert-warning alert-dismissible fade show" role="alert">
                 <strong class='text-body'>Giro a la Derecha realizado, recuerde apagar la direccional</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`
