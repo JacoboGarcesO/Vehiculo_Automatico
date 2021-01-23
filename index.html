@@ -13,6 +13,38 @@
 
 <body>
     <!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Información sobre el automóvil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img width="22px" height="22px" src="./images/Encendido_apagado.png" alt=""> Botón para encender/apagar el carro. <br>
+            <img width="22px" height="22px" src="./images/Estacionarias.png" alt=""> Botón para encender/apagar las estacionarias.<br>
+            <img width="22px" height="22px" src="./images/Direccional-derecha.png" alt=""> Botón para encender/apagar la direccional derecha. <br>
+            <img width="22px" height="22px" src="./images/Direccional_Izquierda.png" alt=""> Botón para encender/apagar la direccional izquierda <br>
+            <img width="22px" height="22px" src="./images/Acelerador.png" alt=""> Botón para acelerar. <br>
+            <img width="22px" height="22px" src="./images/Freno_pie.png" alt=""> Botón para frenar. <br>
+            <img width="22px" height="22px" src="./images/Clutch.png" alt=""> Botón para encender/apagar el clutch. <br>
+            <img width="22px" height="22px" src="./images/Freno_Mano.png" alt=""> Botón para activar/desactivar el freno de mano. <br>
+            <img width="22px" height="22px" src="./images/Neutro.png" alt=""> Botón para poner en neutra. <br>
+            <img width="22px" height="22px" src="./images/Reversa.png" alt=""> Botón para poner en reversa. <br>
+            <img width="22px" height="22px" src="./images/primera.png" alt=""> Botón para poner en primera. <br>
+            <img width="22px" height="22px" src="./images/segunda.png" alt=""> Botón para poner en segunda. <br>
+            <img width="22px" height="22px" src="./images/tercera.png" alt=""> Botón para poner en tercera. <br>
+            <img width="22px" height="22px" src="./images/cuarta.png" alt=""> Botón para poner en cuarta. <br>
+            <img width="22px" height="22px" src="./images/quinta.png" alt=""> Botón para poner en quinta. <br>
+            <img width="22px" height="22px" src="./images/sexta.png" alt=""> Botón para poner en sexta. 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="bg-dark modal-content">
@@ -28,16 +60,17 @@
     <div class="container principal">
         <div class="container text-center" id="Alerts"></div>
         <img src="./images/Fondo_Tablero.jpg" alt="">
+        <button data-bs-toggle="modal" data-bs-target="#exampleModal2" style="margin: 10px; margin-left:990px;" type="button" class="btn btn-primary position-relative">
+            Información  <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
+          </button>
         <div>
-            <br>
-            <br>
-            <br>
             <br>
             <br>
             <div class="text-center">
                 <button type="button" id="btn_On" class="btn btn-danger "><i style="font-size: x-large;"
                         class="fas fa-power-off"></i></button>
             </div>
+            <br>
             <br>
             <br>
             <br>
@@ -96,7 +129,7 @@
             </div>
 
             <div style="padding-left: 205px;" class="text-center">
-                <button id="btn_Freno_Mano" style="margin:0 30px; margin-top: 30px;" type="button"
+                <button id="btn_Freno_Mano" style="margin:0 30px; margin-top: 20px;" type="button"
                     class="btn btn-danger"><i style="font-size: 30px;"
                         class="text-light fab fa-steam-symbol"></i></button>
             </div>
